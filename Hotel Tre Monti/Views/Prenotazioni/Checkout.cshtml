@@ -1,0 +1,11 @@
+﻿@model Hotel_Tre_Monti.Models.Prenotazione
+
+<h2>Checkout</h2>
+
+<p>Numero Stanza: @Model.NumeroCamera</p>
+<p>Periodo: @Model.PeriodoDal.ToString("dd/MM/yyyy") - @Model.PeriodoAl.ToString("dd/MM/yyyy")</p>
+<p>Tariffa Applicata: @Model.Tariffa</p>
+
+
+<button onclick="window.print()">Stampa Dettaglio Prenotazione</button>
+

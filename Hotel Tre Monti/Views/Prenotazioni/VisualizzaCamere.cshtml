@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Hotel_Tre_Monti.Models.Camera>
+
+@{
+    ViewBag.Title = "VisualizzaCamere";
+}
+
+<h2>VisualizzaCamere</h2>
+
+<p>
+    @Html.ActionLink("Prenota Camera", "Prenota", "Prenotazioni", new { area = "" }, new { @class = "btn btn-primary" })
+</p>
+
+@Html.ActionLink("Servizi Aggiuntivi", "AggiungiServizio", "Prenotazioni", new { area = "" }, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipologia)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descrizione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipologia)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Numero }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Numero }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Numero })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Hotel_Tre_Monti.Models.Prenotazione>
+
+@{
+    ViewBag.Title = "Lista Prenotazioni";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Prenota")
+</p>
+<div class="container table-responsive">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroPrenotazione)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodiceFiscaleCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroCamera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataPrenotazione)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroProgressivoAnno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Anno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PeriodoDal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PeriodoAl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaparraConfirmatoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tariffa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MezzaPensione)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PensioneCompleta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PernottamentoConColazione)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroPrenotazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodiceFiscaleCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroCamera)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataPrenotazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroProgressivoAnno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Anno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PeriodoDal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PeriodoAl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaparraConfirmatoria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tariffa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MezzaPensione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PensioneCompleta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PernottamentoConColazione)
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("Details", "Details", new { numeroPrenotazione = item.NumeroPrenotazione })
+                    @Html.ActionLink("Effettua Checkout", "Checkout", new { numeroPrenotazione = item.NumeroPrenotazione })
+                    
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

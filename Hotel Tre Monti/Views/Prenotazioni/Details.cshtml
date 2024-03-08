@@ -1,0 +1,121 @@
+﻿@model Hotel_Tre_Monti.Models.Prenotazione
+
+@{
+    ViewBag.Title = "Dettaglio Prenotazione";
+}
+
+<h2>Dettaglio Prenotazione</h2>
+
+<p>
+    @Html.ActionLink("Torna alla Lista", "Index")
+</p>
+
+<!-- Mostra dettagli prenotazione -->
+<div>
+    <h4>Dettagli Prenotazione</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroPrenotazione)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumeroPrenotazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodiceFiscaleCliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CodiceFiscaleCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroCamera)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumeroCamera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPrenotazione)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPrenotazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroProgressivoAnno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumeroProgressivoAnno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Anno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PeriodoDal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PeriodoDal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PeriodoAl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PeriodoAl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CaparraConfirmatoria)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CaparraConfirmatoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tariffa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tariffa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MezzaPensione)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MezzaPensione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PensioneCompleta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PensioneCompleta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PernottamentoConColazione)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PernottamentoConColazione)
+        </dd>
+
+        <!-- Aggiungi altre proprietà della prenotazione -->
+        <!-- Mostra servizi aggiuntivi -->
+        <dt>Servizi Aggiuntivi</dt>
+        <dd>
+            <ul>
+                @foreach (var servizio in Model.ServiziAggiuntivi)
+                {
+                    <li>@servizio.TipoServizio - Quantità: @servizio.Quantita, Prezzo: @servizio.Prezzo</li>
+                }
+            </ul>
+        </dd>
+    </dl>
+</div>
